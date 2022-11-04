@@ -21,12 +21,14 @@ void Ultrasonic_Init(void){
 
 }
 
-float ObtenerDistancia(void)
+int ObtenerDistancia(void)
 {
     //* distancia = (Tiempo * velocidad)/2
     //* velocidad del sonido "340m/s" o "0.034cm/us"
     //* Entonces la formula es: Distancia=TMR0*0.034/2
-    float distancia;
+    
+    int distancia;
+    /*
     float tiempo;
     
     LATBbits.LB2=1;
@@ -38,10 +40,10 @@ float ObtenerDistancia(void)
     TMR0=0;
     while(PORTBbits.RB3==1);
     tiempo=TMR0;  
-    
+    */
      
     //distancia = (float)(tiempo*0.034/2);
-    distancia = 9;
+    distancia = (int)9;
     return distancia;
 }
 
@@ -119,7 +121,7 @@ void LCD_Init(void)
 void main(void) {
     LCD_Init();
     __delay_ms(100);
-    float distancia;
+    int distancia;
     Configuracion();
     TMR0_Init();
     Ultrasonic_Init();
@@ -129,7 +131,7 @@ void main(void) {
         distancia = ObtenerDistancia();
         printf(" Distancia");
         putcm(0xC2);
-        printf("%f cm", distancia);
+        printf("%d cm", distancia);
         if(distancia < 10)
         {
             LATBbits.LB0 = 0;

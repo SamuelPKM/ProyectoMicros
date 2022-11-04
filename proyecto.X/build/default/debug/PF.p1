@@ -29,16 +29,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3919
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f45k50.h: 3919: extern volatile LATBbits_t LATBbits __attribute__((address(0xF8A)));
 [v _LATBbits `VS166 ~T0 @X0 0 e@3978 ]
-[v F192 `(v ~T0 @X0 1 tf1`ul ]
-"12 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\builtins.h
-[v __delay `JF192 ~T0 @X0 0 e ]
-[p i __delay ]
-"12510 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f45k50.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f45k50.h: 12510: extern volatile unsigned short TMR0 __attribute__((address(0xFD6)));
-[v _TMR0 `Vus ~T0 @X0 0 e@4054 ]
 "12440
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f45k50.h: 12440: extern volatile unsigned char T0CON __attribute__((address(0xFD5)));
 [v _T0CON `Vuc ~T0 @X0 0 e@4053 ]
+"12510
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f45k50.h: 12510: extern volatile unsigned short TMR0 __attribute__((address(0xFD6)));
+[v _TMR0 `Vus ~T0 @X0 0 e@4054 ]
 "9708
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f45k50.h: 9708: extern volatile unsigned char ADCON1 __attribute__((address(0xFC1)));
 [v _ADCON1 `Vuc ~T0 @X0 0 e@4033 ]
@@ -51,9 +47,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 "362
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f45k50.h: 362: extern volatile unsigned char ANSELD __attribute__((address(0xF5E)));
 [v _ANSELD `Vuc ~T0 @X0 0 e@3934 ]
+"278
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f45k50.h: 278: extern volatile unsigned char ANSELB __attribute__((address(0xF5C)));
+[v _ANSELB `Vuc ~T0 @X0 0 e@3932 ]
 "4106
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\proc\pic18f45k50.h: 4106: extern volatile unsigned char LATD __attribute__((address(0xF8C)));
 [v _LATD `Vuc ~T0 @X0 0 e@3980 ]
+[v F192 `(v ~T0 @X0 1 tf1`ul ]
+"12 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18F-K_DFP/1.5.114/xc8\pic\include\builtins.h
+[v __delay `JF192 ~T0 @X0 0 e ]
+[p i __delay ]
 [p mainexit ]
 "105 C:\Program Files\Microchip\xc8\v2.40\pic\include\c99\stdio.h
 [; ;C:\Program Files\Microchip\xc8\v2.40\pic\include\c99\stdio.h: 105: int printf(const char *restrict, ...);
@@ -712,37 +715,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 638 ]
 }
 "24
-[; ;PF.c: 24: float ObtenerDistancia(void)
-[v _ObtenerDistancia `(f ~T0 @X0 1 ef ]
+[; ;PF.c: 24: int ObtenerDistancia(void)
+[v _ObtenerDistancia `(i ~T0 @X0 1 ef ]
 "25
 [; ;PF.c: 25: {
 {
 [e :U _ObtenerDistancia ]
 [f ]
-"29
-[; ;PF.c: 29:     float distancia;
-[v _distancia `f ~T0 @X0 1 a ]
 "30
-[; ;PF.c: 30:     float tiempo;
-[v _tiempo `f ~T0 @X0 1 a ]
-"32
-[; ;PF.c: 32:     LATBbits.LB2=1;
-[e = . . _LATBbits 1 2 -> -> 1 `i `uc ]
-"33
-[; ;PF.c: 33:     _delay((unsigned long)((10)*(8000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
-"34
-[; ;PF.c: 34:     LATBbits.LB2=0;
-[e = . . _LATBbits 1 2 -> -> 0 `i `uc ]
-"35
-[; ;PF.c: 35:     TMR0=0;
-[e = _TMR0 -> -> 0 `i `us ]
-"44
-[; ;PF.c: 44:     tiempo=9;
-[e = _tiempo -> -> 9 `i `f ]
+[; ;PF.c: 30:     int distancia;
+[v _distancia `i ~T0 @X0 1 a ]
 "46
-[; ;PF.c: 46:     distancia = tiempo;
-[e = _distancia _tiempo ]
+[; ;PF.c: 46:     distancia = (int)9;
+[e = _distancia -> 9 `i ]
 "47
 [; ;PF.c: 47:     return distancia;
 [e ) _distancia ]
@@ -805,229 +790,235 @@ Version 4.0 HI-TECH Software Intermediate Code
 "68
 [; ;PF.c: 68:     ANSELD=0;
 [e = _ANSELD -> -> 0 `i `uc ]
-"70
-[; ;PF.c: 70: }
+"69
+[; ;PF.c: 69:     ANSELB=0;
+[e = _ANSELB -> -> 0 `i `uc ]
+"71
+[; ;PF.c: 71: }
 [e :UE 641 ]
 }
-"72
-[; ;PF.c: 72: void putch(char data) {
+"73
+[; ;PF.c: 73: void putch(char data) {
 [v _putch `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _putch ]
 [v _data `uc ~T0 @X0 1 r1 ]
 [f ]
-"73
-[; ;PF.c: 73:     char Activa;
-[v _Activa `uc ~T0 @X0 1 a ]
 "74
-[; ;PF.c: 74:     Activa = data & 0xF0;
-[e = _Activa -> & -> _data `i -> 240 `i `uc ]
+[; ;PF.c: 74:     char Activa;
+[v _Activa `uc ~T0 @X0 1 a ]
 "75
-[; ;PF.c: 75:     LATD = Activa | 0x05;
-[e = _LATD -> | -> _Activa `i -> 5 `i `uc ]
+[; ;PF.c: 75:     Activa = data & 0xF0;
+[e = _Activa -> & -> _data `i -> 240 `i `uc ]
 "76
-[; ;PF.c: 76:     _delay((unsigned long)((10)*(8000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
-"77
-[; ;PF.c: 77:     LATD = Activa | 0x01;
-[e = _LATD -> | -> _Activa `i -> 1 `i `uc ]
-"78
-[; ;PF.c: 78:     _delay((unsigned long)((1)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"79
-[; ;PF.c: 79:     Activa = data << 4;
-[e = _Activa -> << -> _data `i -> 4 `i `uc ]
-"80
-[; ;PF.c: 80:     LATD = Activa | 0x05;
+[; ;PF.c: 76:     LATD = Activa | 0x05;
 [e = _LATD -> | -> _Activa `i -> 5 `i `uc ]
-"81
-[; ;PF.c: 81:     _delay((unsigned long)((10)*(8000000/4000000.0)));
+"77
+[; ;PF.c: 77:     _delay((unsigned long)((10)*(8000000/4000000.0)));
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
-"82
-[; ;PF.c: 82:     LATD = Activa | 0x01;
+"78
+[; ;PF.c: 78:     LATD = Activa | 0x01;
 [e = _LATD -> | -> _Activa `i -> 1 `i `uc ]
+"79
+[; ;PF.c: 79:     _delay((unsigned long)((1)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"80
+[; ;PF.c: 80:     Activa = data << 4;
+[e = _Activa -> << -> _data `i -> 4 `i `uc ]
+"81
+[; ;PF.c: 81:     LATD = Activa | 0x05;
+[e = _LATD -> | -> _Activa `i -> 5 `i `uc ]
+"82
+[; ;PF.c: 82:     _delay((unsigned long)((10)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
 "83
-[; ;PF.c: 83: }
+[; ;PF.c: 83:     LATD = Activa | 0x01;
+[e = _LATD -> | -> _Activa `i -> 1 `i `uc ]
+"84
+[; ;PF.c: 84: }
 [e :UE 642 ]
 }
-"85
-[; ;PF.c: 85: void putcm(char data) {
+"86
+[; ;PF.c: 86: void putcm(char data) {
 [v _putcm `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _putcm ]
 [v _data `uc ~T0 @X0 1 r1 ]
 [f ]
-"86
-[; ;PF.c: 86:     char Activa;
-[v _Activa `uc ~T0 @X0 1 a ]
 "87
-[; ;PF.c: 87:     Activa = data & 0xF0;
-[e = _Activa -> & -> _data `i -> 240 `i `uc ]
+[; ;PF.c: 87:     char Activa;
+[v _Activa `uc ~T0 @X0 1 a ]
 "88
-[; ;PF.c: 88:     LATD = Activa | 0x04;
-[e = _LATD -> | -> _Activa `i -> 4 `i `uc ]
+[; ;PF.c: 88:     Activa = data & 0xF0;
+[e = _Activa -> & -> _data `i -> 240 `i `uc ]
 "89
-[; ;PF.c: 89:     _delay((unsigned long)((10)*(8000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
-"90
-[; ;PF.c: 90:     LATD = Activa;
-[e = _LATD -> _Activa `uc ]
-"91
-[; ;PF.c: 91:     _delay((unsigned long)((1)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"92
-[; ;PF.c: 92:     Activa = data << 4;
-[e = _Activa -> << -> _data `i -> 4 `i `uc ]
-"93
-[; ;PF.c: 93:     LATD = Activa | 0x04;
+[; ;PF.c: 89:     LATD = Activa | 0x04;
 [e = _LATD -> | -> _Activa `i -> 4 `i `uc ]
-"94
-[; ;PF.c: 94:     _delay((unsigned long)((10)*(8000000/4000000.0)));
+"90
+[; ;PF.c: 90:     _delay((unsigned long)((10)*(8000000/4000000.0)));
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
-"95
-[; ;PF.c: 95:     LATD = Activa;
+"91
+[; ;PF.c: 91:     LATD = Activa;
 [e = _LATD -> _Activa `uc ]
+"92
+[; ;PF.c: 92:     _delay((unsigned long)((1)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"93
+[; ;PF.c: 93:     Activa = data << 4;
+[e = _Activa -> << -> _data `i -> 4 `i `uc ]
+"94
+[; ;PF.c: 94:     LATD = Activa | 0x04;
+[e = _LATD -> | -> _Activa `i -> 4 `i `uc ]
+"95
+[; ;PF.c: 95:     _delay((unsigned long)((10)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
 "96
-[; ;PF.c: 96: }
+[; ;PF.c: 96:     LATD = Activa;
+[e = _LATD -> _Activa `uc ]
+"97
+[; ;PF.c: 97: }
 [e :UE 643 ]
 }
-"98
-[; ;PF.c: 98: void LCD_Init(void)
-[v _LCD_Init `(v ~T0 @X0 1 ef ]
 "99
-[; ;PF.c: 99: {
+[; ;PF.c: 99: void LCD_Init(void)
+[v _LCD_Init `(v ~T0 @X0 1 ef ]
+"100
+[; ;PF.c: 100: {
 {
 [e :U _LCD_Init ]
 [f ]
-"100
-[; ;PF.c: 100:     _delay((unsigned long)((30)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 30 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "101
-[; ;PF.c: 101:     putcm(0x02);
-[e ( _putcm (1 -> -> 2 `i `uc ]
+[; ;PF.c: 101:     _delay((unsigned long)((30)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 30 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "102
-[; ;PF.c: 102:     _delay((unsigned long)((1)*(8000000/4000.0)));
+[; ;PF.c: 102:     putcm(0x02);
+[e ( _putcm (1 -> -> 2 `i `uc ]
+"103
+[; ;PF.c: 103:     _delay((unsigned long)((1)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"104
-[; ;PF.c: 104:     putcm(0x28);
-[e ( _putcm (1 -> -> 40 `i `uc ]
 "105
-[; ;PF.c: 105:     _delay((unsigned long)((1)*(8000000/4000.0)));
+[; ;PF.c: 105:     putcm(0x28);
+[e ( _putcm (1 -> -> 40 `i `uc ]
+"106
+[; ;PF.c: 106:     _delay((unsigned long)((1)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"107
-[; ;PF.c: 107:     putcm(0x2C);
-[e ( _putcm (1 -> -> 44 `i `uc ]
 "108
-[; ;PF.c: 108:     _delay((unsigned long)((1)*(8000000/4000.0)));
+[; ;PF.c: 108:     putcm(0x2C);
+[e ( _putcm (1 -> -> 44 `i `uc ]
+"109
+[; ;PF.c: 109:     _delay((unsigned long)((1)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"110
-[; ;PF.c: 110:     putcm(0x0C);
-[e ( _putcm (1 -> -> 12 `i `uc ]
 "111
-[; ;PF.c: 111:     _delay((unsigned long)((1)*(8000000/4000.0)));
+[; ;PF.c: 111:     putcm(0x0C);
+[e ( _putcm (1 -> -> 12 `i `uc ]
+"112
+[; ;PF.c: 112:     _delay((unsigned long)((1)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"113
-[; ;PF.c: 113:     putcm(0x06);
-[e ( _putcm (1 -> -> 6 `i `uc ]
 "114
-[; ;PF.c: 114:     _delay((unsigned long)((1)*(8000000/4000.0)));
+[; ;PF.c: 114:     putcm(0x06);
+[e ( _putcm (1 -> -> 6 `i `uc ]
+"115
+[; ;PF.c: 115:     _delay((unsigned long)((1)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"116
-[; ;PF.c: 116:     putcm(0x80);
-[e ( _putcm (1 -> -> 128 `i `uc ]
 "117
-[; ;PF.c: 117:     _delay((unsigned long)((1)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;PF.c: 117:     putcm(0x80);
+[e ( _putcm (1 -> -> 128 `i `uc ]
 "118
-[; ;PF.c: 118: }
+[; ;PF.c: 118:     _delay((unsigned long)((1)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"119
+[; ;PF.c: 119: }
 [e :UE 644 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"120
-[; ;PF.c: 120: void main(void) {
+"121
+[; ;PF.c: 121: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"121
-[; ;PF.c: 121:     float distancia;
-[v _distancia `f ~T0 @X0 1 a ]
 "122
-[; ;PF.c: 122:     Configuracion();
-[e ( _Configuracion ..  ]
-"123
-[; ;PF.c: 123:     TMR0_Init();
-[e ( _TMR0_Init ..  ]
-"124
-[; ;PF.c: 124:     Ultrasonic_Init();
-[e ( _Ultrasonic_Init ..  ]
-"125
-[; ;PF.c: 125:     LCD_Init();
+[; ;PF.c: 122:     LCD_Init();
 [e ( _LCD_Init ..  ]
+"123
+[; ;PF.c: 123:     _delay((unsigned long)((100)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"124
+[; ;PF.c: 124:     int distancia;
+[v _distancia `i ~T0 @X0 1 a ]
+"125
+[; ;PF.c: 125:     Configuracion();
+[e ( _Configuracion ..  ]
+"126
+[; ;PF.c: 126:     TMR0_Init();
+[e ( _TMR0_Init ..  ]
 "127
-[; ;PF.c: 127:     while (1) {
+[; ;PF.c: 127:     Ultrasonic_Init();
+[e ( _Ultrasonic_Init ..  ]
+"130
+[; ;PF.c: 130:     while (1) {
 [e :U 647 ]
 {
-"128
-[; ;PF.c: 128:         distancia = ObtenerDistancia();
-[e = _distancia ( _ObtenerDistancia ..  ]
-"129
-[; ;PF.c: 129:         printf(" Distancia");
-[e ( _printf :s 1C ]
-"130
-[; ;PF.c: 130:         putcm(0xC2);
-[e ( _putcm (1 -> -> 194 `i `uc ]
 "131
-[; ;PF.c: 131:         printf("%f cm", distancia);
-[e ( _printf , (. :s 2C -> _distancia `d ]
+[; ;PF.c: 131:         distancia = ObtenerDistancia();
+[e = _distancia ( _ObtenerDistancia ..  ]
 "132
-[; ;PF.c: 132:         if(distancia < 10)
-[e $ ! < _distancia -> -> 10 `i `f 649  ]
+[; ;PF.c: 132:         printf(" Distancia");
+[e ( _printf :s 1C ]
 "133
-[; ;PF.c: 133:         {
-{
+[; ;PF.c: 133:         putcm(0xC2);
+[e ( _putcm (1 -> -> 194 `i `uc ]
 "134
-[; ;PF.c: 134:             LATBbits.LB0 = 0;
-[e = . . _LATBbits 1 0 -> -> 0 `i `uc ]
+[; ;PF.c: 134:         printf("%d cm", distancia);
+[e ( _printf , (. :s 2C _distancia ]
 "135
-[; ;PF.c: 135:             LATBbits.LB1 = 1;
-[e = . . _LATBbits 1 1 -> -> 1 `i `uc ]
+[; ;PF.c: 135:         if(distancia < 10)
+[e $ ! < _distancia -> 10 `i 649  ]
 "136
-[; ;PF.c: 136:         }
+[; ;PF.c: 136:         {
+{
+"137
+[; ;PF.c: 137:             LATBbits.LB0 = 0;
+[e = . . _LATBbits 1 0 -> -> 0 `i `uc ]
+"138
+[; ;PF.c: 138:             LATBbits.LB1 = 1;
+[e = . . _LATBbits 1 1 -> -> 1 `i `uc ]
+"139
+[; ;PF.c: 139:         }
 }
 [e $U 650  ]
-"137
-[; ;PF.c: 137:         else
-[e :U 649 ]
-"138
-[; ;PF.c: 138:         {
-{
-"139
-[; ;PF.c: 139:             LATBbits.LB0 = 1;
-[e = . . _LATBbits 1 0 -> -> 1 `i `uc ]
 "140
-[; ;PF.c: 140:             LATBbits.LB1 = 0;
-[e = . . _LATBbits 1 1 -> -> 0 `i `uc ]
+[; ;PF.c: 140:         else
+[e :U 649 ]
 "141
-[; ;PF.c: 141:         }
+[; ;PF.c: 141:         {
+{
+"142
+[; ;PF.c: 142:             LATBbits.LB0 = 1;
+[e = . . _LATBbits 1 0 -> -> 1 `i `uc ]
+"143
+[; ;PF.c: 143:             LATBbits.LB1 = 0;
+[e = . . _LATBbits 1 1 -> -> 0 `i `uc ]
+"144
+[; ;PF.c: 144:         }
 }
 [e :U 650 ]
-"142
-[; ;PF.c: 142:         _delay((unsigned long)((200)*(8000000/4000.0)));
+"145
+[; ;PF.c: 145:         _delay((unsigned long)((200)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"144
-[; ;PF.c: 144:     }
+"147
+[; ;PF.c: 147:     }
 }
 [e :U 646 ]
 [e $U 647  ]
 [e :U 648 ]
-"146
-[; ;PF.c: 146:     return;
+"149
+[; ;PF.c: 149:     return;
 [e $UE 645  ]
-"147
-[; ;PF.c: 147: }
+"150
+[; ;PF.c: 150: }
 [e :UE 645 ]
 }
-[p f _printf 8396800 ]
-[a 2C 37 102 32 99 109 0 ]
+[p f _printf 8388736 ]
+[a 2C 37 100 32 99 109 0 ]
 [a 1C 32 68 105 115 116 97 110 99 105 97 0 ]

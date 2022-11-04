@@ -8267,27 +8267,15 @@ void Ultrasonic_Init(void){
 
 }
 
-float ObtenerDistancia(void)
+int ObtenerDistancia(void)
 {
 
 
 
-    float distancia;
-    float tiempo;
 
-    LATBbits.LB2=1;
-    _delay((unsigned long)((10)*(8000000/4000000.0)));
-    LATBbits.LB2=0;
-    TMR0=0;
-
-    while(PORTBbits.RB3==0);
-    TMR0=0;
-    while(PORTBbits.RB3==1);
-    tiempo=TMR0;
-
-
-
-    distancia = 9;
+    int distancia;
+# 46 "PF.c"
+    distancia = (int)9;
     return distancia;
 }
 
@@ -8365,7 +8353,7 @@ void LCD_Init(void)
 void main(void) {
     LCD_Init();
     _delay((unsigned long)((100)*(8000000/4000.0)));
-    float distancia;
+    int distancia;
     Configuracion();
     TMR0_Init();
     Ultrasonic_Init();
@@ -8375,7 +8363,7 @@ void main(void) {
         distancia = ObtenerDistancia();
         printf(" Distancia");
         putcm(0xC2);
-        printf("%f cm", distancia);
+        printf("%d cm", distancia);
         if(distancia < 10)
         {
             LATBbits.LB0 = 0;
