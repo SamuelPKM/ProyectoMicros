@@ -8285,8 +8285,9 @@ float ObtenerDistancia(void)
     while(PORTBbits.RB3==1);
     tiempo=TMR0;
 
-    distancia = (float)(tiempo*0.034/2);
 
+
+    distancia = 9;
     return distancia;
 }
 
@@ -8309,6 +8310,7 @@ void Configuracion(void)
 
     TRISD=0;
     ANSELD=0;
+    ANSELB=0;
 
 }
 
@@ -8361,11 +8363,13 @@ void LCD_Init(void)
 }
 
 void main(void) {
+    LCD_Init();
+    _delay((unsigned long)((100)*(8000000/4000.0)));
     float distancia;
     Configuracion();
     TMR0_Init();
     Ultrasonic_Init();
-    LCD_Init();
+
 
     while (1) {
         distancia = ObtenerDistancia();
